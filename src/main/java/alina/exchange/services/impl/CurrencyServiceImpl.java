@@ -16,11 +16,11 @@ public class CurrencyServiceImpl implements CurrencyService {
 
     private final OpenExchangeClient openExchangeClient;
     private final GiphyClient giphyClient;
-    private double todaysRate;
-    private double yesterdaysRate;
 
     @Override
     public String checkCurrencyToUsd(String currencyCode) {
+        double todaysRate = 0.0;
+        double yesterdaysRate = 0.0;
         Map<String, Double> rates = openExchangeClient.getCurrencies().getRates();
         Map<String, Double> pastRates = openExchangeClient
                 .getPastCurrencies(LocalDate.now().minusDays(1).toString()).getRates();
@@ -28,24 +28,16 @@ public class CurrencyServiceImpl implements CurrencyService {
             if (entry.getKey().equals(currencyCode)) {
                 todaysRate = entry.getValue();
             }
-            else {
-                todaysRate=0;
-            }
         }
         for (Map.Entry<String, Double> entry : pastRates.entrySet()) {
             if (entry.getKey().equals(currencyCode)) {
                 yesterdaysRate = entry.getValue();
             }
-            else {
-                todaysRate=0;
-            }
         }
-        System.out.println(todaysRate);
 
         if (todaysRate==0.0) {
             throw new NoSuchCurrencyException(currencyCode);
         }
-
 
         if (todaysRate > yesterdaysRate) {
             return giphyClient.getGiphy("rich", "KlIXGg0eCbUFB5nXKLOjBJEzTnDtQmYg").getData()
