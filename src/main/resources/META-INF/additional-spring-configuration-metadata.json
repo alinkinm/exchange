@@ -1,0 +1,53 @@
+{
+  "properties": [
+    {
+      "name": "url",
+      "type": "java.lang.String",
+      "description": "Description for url."
+    },
+    {
+      "name": "sample.client.url",
+      "type": "java.lang.String",
+      "description": "Description for sample.client.url."
+    },
+    {
+      "name": "app.feign.config.url",
+      "type": "java.lang.String",
+      "description": "Description for app.feign.config.url."
+    },
+    {
+      "name": "app.feign.config.api_key",
+      "type": "java.lang.String",
+      "description": "Description for app.feign.config.api_key."
+    },
+    {
+      "name": "app.feign.config.exchange_url",
+      "type": "java.lang.String",
+      "description": "Description for app.feign.config.exchange_url."
+    },
+    {
+      "name": "app.feign.config.exchange_latest",
+      "type": "java.lang.String",
+      "description": "Description for app.feign.config.exchange_latest."
+    },
+    {
+      "name": "app.feign.config.exchange_past",
+      "type": "java.lang.String",
+      "description": "Description for app.feign.config.exchange_past."
+    },
+    {
+      "name": "gif_for_up",
+      "type": "java.lang.String",
+      "description": "Description for gif_for_up."
+    },
+    {
+      "name": "gif_for_down",
+      "type": "java.lang.String",
+      "description": "Description for gif_for_down."
+    },
+    {
+      "name": "pring.mvc.pathmatch.matching-strategy",
+      "type": "java.lang.String",
+      "description": "Description for pring.mvc.pathmatch.matching-strategy."
+    }
+  ] }

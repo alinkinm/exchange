@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  app:
+    image: 'exchange'
+    build:
+      context: .
+    container_name: friendly_murdock
+    ports:
+      - 9966:9966
